@@ -21,6 +21,25 @@ int main(int argc, const char * argv[]) {
         
         BNRItem *item3 = [[BNRItem alloc] initWithItemName:@"Cupboard"];
         NSLog(@"BNR instance %@", item3);
+        
+        // generating random items with "Convenience methods"
+        BNRItem *item4 = [BNRItem randomItem];
+        NSLog(@"BNR instance %@", item4);
+        
+        // array to hold randommly generated items
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        
+        // generate 10 random items and add to items
+        for(int i = 0; i < 10; i++) {
+            BNRItem *randomItem = [BNRItem randomItem];
+            [items addObject:randomItem];
+        }
+        
+        // Display all randomly generated items
+        for(BNRItem *item in items) {
+            NSLog(@"%@", item);
+        }
+        items = nil;
     }
     return EXIT_SUCCESS;
 }

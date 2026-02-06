@@ -15,6 +15,8 @@
     NSDate *_dateCreated;
 }
 
++ (instancetype) randomItem;
+
 // getters
 - (NSString*) itemName;
 - (NSString*) serialNumber;
