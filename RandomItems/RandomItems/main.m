@@ -39,6 +39,10 @@ int main(int argc, const char * argv[]) {
         for(BNRItem *item in items) {
             NSLog(@"%@", item);
         }
+        // Sending a message that an instance of BNRItem will not understand
+        // id lastItem = [items lastObject];
+        // This will cause an NSInvalidArgumentsException
+        // [lastItem count];
         items = nil;
     }
     return EXIT_SUCCESS;
