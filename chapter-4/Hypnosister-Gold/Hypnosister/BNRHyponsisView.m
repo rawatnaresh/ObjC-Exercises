@@ -95,7 +95,7 @@
     CGPoint startPoint = CGPointMake(0, vSpacing);
     CGPoint endPoint = CGPointMake(0, self.bounds.size.height - vSpacing);
     
- 
+    
     CGContextDrawLinearGradient(currentContext, gradient, startPoint, endPoint, 0);
     
     // remove ownership
@@ -115,5 +115,74 @@
     // restore graphics state
     CGContextRestoreGState(currentContext);
 }
+
+// Other shapes
+// Uncomment to see
+
+// Shape 2
+
+//- (void) drawRect:(CGRect)rect
+//{
+//    // center the square
+//    CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+//    UIBezierPath *path = [[UIBezierPath alloc] init];
+//
+//    float width = self.bounds.size.width;
+//    float height = self.bounds.size.height;
+//
+//    for(int length = 0; length < height; length += 15) {
+//
+//        float hLength = MIN(width, length);
+//
+//        CGPoint topLeftPoint = CGPointMake(center.x - hLength / 2, center.y - length / 2);
+//        CGPoint topRightPoint = CGPointMake(topLeftPoint.x + hLength, topLeftPoint.y);
+//        CGPoint bottomRightPoint = CGPointMake(topRightPoint.x, topRightPoint.y + length);
+//        CGPoint bottomLeftPoint = CGPointMake(bottomRightPoint.x - hLength, bottomRightPoint.y);
+//
+//        [path moveToPoint:topLeftPoint];
+//        [path addLineToPoint:topRightPoint];
+//        [path addLineToPoint: bottomRightPoint];
+//        [path addLineToPoint:bottomLeftPoint];
+//        [path closePath];
+//    }
+//    [path setLineWidth:5.0];
+
+//    [UIColor.blackColor setStroke];
+//
+//    [path stroke];
+//
+//}
+
+// Shape 3
+
+//- (void) drawRect:(CGRect)rect
+//{
+//    CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+//    UIBezierPath *path = [[UIBezierPath alloc] init];
+//
+//    float width = self.bounds.size.width;
+//    float height = self.bounds.size.height;
+//
+//    for(int length = 0; length < height; length += 25) {
+//        float ratio = width / height;
+//        float hLength = MIN(width, length * ratio);
+//
+//        CGPoint topLeftPoint = CGPointMake(center.x - hLength / 2, center.y - length / 2);
+//        CGPoint topRightPoint = CGPointMake(topLeftPoint.x + hLength, topLeftPoint.y);
+//        CGPoint bottomRightPoint = CGPointMake(topRightPoint.x, topRightPoint.y + length);
+//        CGPoint bottomLeftPoint = CGPointMake(bottomRightPoint.x - hLength, bottomRightPoint.y);
+//
+//        [path moveToPoint:topLeftPoint];
+//        [path addLineToPoint:topRightPoint];
+//        [path addLineToPoint: bottomRightPoint];
+//        [path addLineToPoint:bottomLeftPoint];
+//        [path closePath];
+//    }
+//    [path setLineWidth:2.0];
+//
+//    [UIColor.blackColor setStroke];
+//
+//    [path stroke];
+//}
 
 @end
