@@ -7,7 +7,7 @@ using a text field
 ### 🥇
 
 ### 🥈 Silver Challenge: Pinch to Zoom
-> Add pinch-to-zoom to the Hypnosister project from Chapter 5
+> Add pinch-to-zoom to the Hypnosister project from [Chapter 5](../chapter-5/Hypnosister/)
 
 <!-- <img src="silver.png" width="400" height="auto"> -->
 
