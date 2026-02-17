@@ -7,7 +7,12 @@ of BNRItem objects in a UITableView
 ## Challenges
 
 ### 🥇 Gold Challenge:
->
+> Make each row’s height 60 points except for the last row from the silver challenge, which should
+remain 44 points. Then, change the font size of every row except the last to 20 points. Finally, make the
+background of the UITableView display an image. (To make this pixel-perfect, you will need an image
+of the correct size depending on your device. Refer to the chart in Chapter 1.)
+
+<img src="gold.png" width="400" height="auto">
 
 ### 🥈 Silver Challenge: Constant Rows
 > Make it so the last row of the UITableView always has the text No more items!. Make sure this row
