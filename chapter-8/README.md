@@ -9,8 +9,11 @@ of BNRItem objects in a UITableView
 ### 🥇 Gold Challenge:
 >
 
-### 🥈 Silver Challenge:
-> 
+### 🥈 Silver Challenge: Constant Rows
+> Make it so the last row of the UITableView always has the text No more items!. Make sure this row
+appears regardless of the number of items in the store (including 0 items).
+
+<img src="silver.png" width="400" height="auto">
 
 ### 🥉 Bronze Challenge: Sections
 > Have the UITableView display two sections – one for items worth more than $50 and one for the rest.
