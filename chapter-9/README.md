@@ -12,5 +12,8 @@ delete, and move rows.
 ### 🥈 Silver Challenge: 
 > 
 
-### 🥉 Bronze Challenge: 
-> 
+### 🥉 Bronze Challenge: Renaming the Delete Button
+> When deleting a row, a confirmation button appears labeled Delete. Change the label of this button to
+Remove.
+
+<img src="bronze.png" width="400" height="auto">
