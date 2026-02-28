@@ -17,6 +17,8 @@ dateCreated property of the selected BNRItem.
 > After completing the bronze challenge, you may notice that there is no return key on the number pad.
 Devise a way for the user to dismiss the number pad from the screen.
 
+<img src="silver.png" width="400" height="auto">
+
 ### 🥉 Bronze Challenge: Displaying a Number Pad
 
 > The keyboard for the UITextField that displays a BNRItem’s valueInDollars is a QWERTY
