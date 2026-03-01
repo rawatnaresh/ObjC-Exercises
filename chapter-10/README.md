@@ -13,6 +13,8 @@ with the title Change Date. When this button is tapped, push another view contro
 the navigation stack. This view controller should have a UIDatePicker instance that modifies the
 dateCreated property of the selected BNRItem.
 
+<img src="gold.png" width="400" height="auto">
+
 ### 🥈 Silver Challenge: Dismissing a Number Pad
 > After completing the bronze challenge, you may notice that there is no return key on the number pad.
 Devise a way for the user to dismiss the number pad from the screen.
