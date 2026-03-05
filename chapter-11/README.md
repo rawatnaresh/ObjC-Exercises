@@ -10,8 +10,8 @@
 
 <img src="gold.png" width="400" height="auto">
 
-### 🥈 Silver Challenge: 
-> 
+### 🥈 Silver Challenge: Removing an Image
+> Add a button that clears the image for an item. 
 
 <img src="silver.png" width="400" height="auto">
 
