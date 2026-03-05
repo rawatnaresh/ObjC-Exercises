@@ -15,8 +15,10 @@
 
 <img src="silver.png" width="400" height="auto">
 
-### 🥉 Bronze Challenge: 
+### 🥉 Bronze Challenge: Editing an Image
 
->  
+>  UIImagePickerController has a built-in interface for editing an image once it has been selected.
+Allow the user to edit the image and use the edited image instead of the original image in
+BNRDetailViewController.
 
 <img src="bronze.png" width="400" height="auto">
