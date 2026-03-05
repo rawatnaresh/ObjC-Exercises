@@ -5,8 +5,9 @@
 
 ## Challenges
 
-### 🥇 Gold Challenge: 
-> 
+### 🥇 Gold Challenge: Camera Overlay
+> A UIImagePickerController has a cameraOverlayView property. Make it so that presenting the
+UIImagePickerController shows a crosshair in the middle of the image capture area.
 
 <img src="gold.png" width="400" height="auto">
 
