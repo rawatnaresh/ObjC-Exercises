@@ -102,6 +102,17 @@ NS_ASSUME_NONNULL_BEGIN
     [self setNeedsDisplay];
 }
 
+- (void) touchesCancelled:(NSSet<UITouch *> *)touches
+                withEvent:(nullable UIEvent *)event
+{
+    for(UITouch *t in touches) {
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        [self.linesInProgress removeObjectForKey:key];
+    }
+    
+    [self setNeedsDisplay];
+}
+
 @end
 
 NS_ASSUME_NONNULL_END
