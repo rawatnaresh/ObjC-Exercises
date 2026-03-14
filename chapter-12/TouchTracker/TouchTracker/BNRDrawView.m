@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BNRDrawView()
 
-@property (nonatomic, strong) BNRLine *currentLine;
 @property (nonatomic, strong) NSMutableArray *finishedLines;
+@property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 
 @end
 
@@ -22,8 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _finishedLines = [[NSMutableArray alloc] init];
+        self.finishedLines = [[NSMutableArray alloc] init];
+        self.linesInProgress = [[NSMutableDictionary alloc] init];
         self.backgroundColor = [UIColor clearColor];
+        self.multipleTouchEnabled = YES;
     }
     return self;
 }
@@ -48,46 +50,55 @@ NS_ASSUME_NONNULL_BEGIN
         [self strokeLine:line];
     }
     
-    if (self.currentLine) {
-        // If there is line currently being drawn, do it in red
+    for (NSValue *key in self.linesInProgress) {
         [[UIColor redColor] set];
-        [self strokeLine:self.currentLine];
+        [self strokeLine:self.linesInProgress[key]];
     }
 }
 
 - (void) touchesBegan:(NSSet<UITouch *> *)touches
             withEvent:(nullable UIEvent *)event
 {
-    // Get any object from the set
-    UITouch *t = [touches anyObject];
-    // Get location of the touch in view's coordinate system
-    CGPoint location = [t locationInView:self];
-    
-    // Create a new line and update its begin and end
-    self.currentLine = [[BNRLine alloc] init];
-    self.currentLine.begin = location;
-    self.currentLine.end = location;
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    for(UITouch *t in touches) {
+        CGPoint location = [t locationInView:self];
+        
+        BNRLine *line = [[BNRLine alloc] init];
+        line.begin = location;
+        line.end = location;
+        
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        
+        [self.linesInProgress setValue:line forKey:key];
+    }
+    [self setNeedsDisplay];
 }
 
 - (void) touchesMoved:(NSSet<UITouch *> *)touches
             withEvent:(nullable UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
-    CGPoint location = [t locationInView:self];
-    
-    self.currentLine.end = location;
-    // redraw the view
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    for(UITouch *t in touches) {
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        BNRLine *line = self.linesInProgress[key];
+        
+        CGPoint location = [t locationInView:self];
+        line.end = location;
+    }
     [self setNeedsDisplay];
 }
 
 - (void) touchesEnded:(NSSet<UITouch *> *)touches
             withEvent:(nullable UIEvent *)event
 {
-    // update finishedLines
-    [self.finishedLines addObject:self.currentLine];
-    // reset current line
-    self.currentLine = nil;
-    // redraw the view
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    for(UITouch *t in touches) {
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        BNRLine *line = self.linesInProgress[key];
+        
+        [self.finishedLines addObject:line];
+        [self.linesInProgress removeObjectForKey:key];
+    }
     [self setNeedsDisplay];
 }
 
